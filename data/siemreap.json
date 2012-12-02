@@ -1,0 +1,122 @@
+[
+   {
+      "city":"Siem Reap",
+      "country":"Cambodia",
+      "created_at":"2012-12-02T07:10:49Z",
+      "id":9,
+      "month":9,
+      "rain":"276",
+      "season":"Low",
+      "temperature":80,
+      "updated_at":"2012-12-02T07:10:49Z",
+      "mustsees":[
+
+      ],
+      "badges":[
+         {
+            "badge":6,
+            "created_at":"2012-12-02T07:11:38Z",
+            "desc":"Floods can be really nasty in Siem Reap. Tonle Sap lake washes out the entire area making all smaller rivers and town canals overflow. Siem Reap usually gets waist level water, especially by its canal. If you stay out of your hotel/hostel - you\u2019re going to get really wet, staying inside however doesn\u2019t really guarantee being dry since most buildings are going to be flooded too. Siem Reap\u2019s canal is commonly used for damping trash in it, so expect all that trash to float around during floods.  Roads will be flooded as well, so traveling in and out of Siem Reap will be complicated.",
+            "id":15,
+            "place_id":9,
+            "updated_at":"2012-12-02T07:11:38Z"
+         },
+         {
+            "badge":5,
+            "created_at":"2012-12-02T07:12:05Z",
+            "desc":"For your comfort and to avoid Malaria and Dengue fever in more rural areas use mosquito nets and get a good mosquito spray to use after dusk (you can buy the spray in almost every shop) ",
+            "id":16,
+            "place_id":9,
+            "updated_at":"2012-12-02T07:12:05Z"
+         },
+         {
+            "badge":7,
+            "created_at":"2012-12-02T07:12:46Z",
+            "desc":"Electrical network in Siem Reap is old and unpredictable. Stormy weather is a real threat for the cable system, so blackouts during rainy or stormy days are common. Unless you are somewhere where they have power generators, blackouts mean no AC or fan, no Internet, no lights, restricted services for up to 2 days. ",
+            "id":17,
+            "place_id":9,
+            "updated_at":"2012-12-02T07:12:46Z"
+         },
+         {
+            "badge":8,
+            "created_at":"2012-12-02T07:13:49Z",
+            "desc":"On many stormy days the flights from and to Siem Reap airport will be canceled or delayed for indefinite time. This together with flooded roads will make it difficult to travel in and out of Siem Reap.",
+            "id":18,
+            "place_id":9,
+            "updated_at":"2012-12-02T07:13:49Z"
+         }
+      ]
+   },
+   {
+      "city":"Siem Reap",
+      "country":"Cambodia",
+      "created_at":"2012-12-02T07:14:45Z",
+      "id":10,
+      "month":4,
+      "rain":"61",
+      "season":"High",
+      "temperature":86,
+      "updated_at":"2012-12-02T07:14:45Z",
+      "mustsees":[
+         {
+            "created_at":"2012-12-02T07:16:48Z",
+            "desc":"Make sure you walk around the town to see families and shop owners decorating their buildings with colorful stars, lanterns and garlands. You\u2019re also likely to see a lot of cheerful singing and cake eating on the streets.",
+            "id":8,
+            "place_id":10,
+            "title":"Khmer New Year",
+            "updated_at":"2012-12-02T07:16:48Z"
+         }
+      ],
+      "badges":[
+         {
+            "badge":9,
+            "created_at":"2012-12-02T07:15:23Z",
+            "desc":"  It\u2019s hot and humid. Really hot and humid. You will be sweating, taking showers 3 times a day and praying for AC wherever you stay, eat or visit. Fans don\u2019t really help, so make sure you get a room with AC or a room on non-sunny side with a strong fan. Even swimming in pools can be frustrating because the water will heat up to a hot bath level.",
+            "id":19,
+            "place_id":10,
+            "updated_at":"2012-12-02T07:15:23Z"
+         },
+         {
+            "badge":1,
+            "created_at":"2012-12-02T07:16:14Z",
+            "desc":"Accommodation and transportation prices will be at least 30% higher than in low season.",
+            "id":20,
+            "place_id":10,
+            "updated_at":"2012-12-02T07:16:14Z"
+         }
+      ]
+   },
+   {
+      "city":"Siem Reap",
+      "country":"Cambodia",
+      "created_at":"2012-12-02T07:18:18Z",
+      "id":11,
+      "month":12,
+      "rain":"10",
+      "season":"High",
+      "temperature":77,
+      "updated_at":"2012-12-02T07:18:18Z",
+      "mustsees":[
+
+      ],
+      "badges":[
+         {
+            "badge":1,
+            "created_at":"2012-12-02T07:18:40Z",
+            "desc":"Accommodation and transportation prices will be at least 30% higher than in low season. December is very close to Chinese New Year when a lot of locals travel as well, so a lot of transportation companies will raise their prices for foreigners and bus tickets will go fast. ",
+            "id":21,
+            "place_id":11,
+            "updated_at":"2012-12-02T07:18:40Z"
+         },
+         {
+            "badge":10,
+            "created_at":"2012-12-02T07:19:15Z",
+            "desc":"There are very lively expat communities all around Cambodia, so Western New Year is a big thing. Head South to Sihanoukville for New Year\u2019s beach parties, dancing, fireworks and good vibe. ",
+            "id":22,
+            "place_id":11,
+            "updated_at":"2012-12-02T07:19:15Z"
+         }
+      ]
+   }
+]
+

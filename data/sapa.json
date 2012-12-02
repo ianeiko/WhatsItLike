@@ -1,0 +1,74 @@
+[
+   {
+      "city":"Sa Pa",
+      "country":"Vietnam",
+      "created_at":"2012-12-02T07:21:36Z",
+      "id":12,
+      "month":12,
+      "rain":"50mm",
+      "season":"Low",
+      "temperature":48,
+      "updated_at":"2012-12-02T07:21:36Z",
+      "mustsees":[
+
+      ],
+      "badges":[
+         {
+            "badge":11,
+            "created_at":"2012-12-02T07:22:08Z",
+            "desc":"Winter months in SaPa are definitely not for comfort lovers. The temperature can drop to freezing and it\u2019s pretty much always wet and foggy all the time. Despite the coldness most affordable hotels/guest houses won\u2019t have heating in the rooms and renting a heater will cost additionally. Even with a heater you\u2019re likely to sleep in your jacket, hat and warm socks.  ",
+            "id":23,
+            "place_id":12,
+            "updated_at":"2012-12-02T07:22:08Z"
+         }
+      ]
+   },
+   {
+      "city":"Sa Pa",
+      "country":"Vietnam",
+      "created_at":"2012-12-02T07:23:05Z",
+      "id":13,
+      "month":6,
+      "rain":"290mm",
+      "season":"High",
+      "temperature":73,
+      "updated_at":"2012-12-02T07:23:05Z",
+      "mustsees":[
+         {
+            "created_at":"2012-12-02T07:24:15Z",
+            "desc":"This is an incredible experience and an opportunity to get to know the local hill tribe communities and their way of life. It\u2019s easy to organize a hiking trip to a village and homestay there - just ask around the tribe women who\u2019re selling their crafts at SaPa market.",
+            "id":9,
+            "place_id":13,
+            "title":"Homestay in hill tribes villages",
+            "updated_at":"2012-12-02T07:24:15Z"
+         },
+         {
+            "created_at":"2012-12-02T07:24:34Z",
+            "desc":"Spring and summer is when rice terraces around SaPa are the greenest. It\u2019s a truly spectacular view - so don\u2019t miss the opportunity to hike around and take some breathtaking photos.",
+            "id":10,
+            "place_id":13,
+            "title":"The beauty of rice terraces",
+            "updated_at":"2012-12-02T07:24:34Z"
+         }
+      ],
+      "badges":[
+         {
+            "badge":4,
+            "created_at":"2012-12-02T07:23:36Z",
+            "desc":"SaPa is located on a mountain slope so the town itself won\u2019t usually get flooded,  however visiting valleys and rice terraces around SaPa might require you to rent rubber boots (several clothing stores in the town will have boots for rent)",
+            "id":24,
+            "place_id":13,
+            "updated_at":"2012-12-02T07:23:36Z"
+         },
+         {
+            "badge":2,
+            "created_at":"2012-12-02T07:23:52Z",
+            "desc":"In high season in addition to US/European travellers SaPa gets a lot of visitors from nearby countries as well, e.g. from Singapore, India, Malaysia and it does get crowded. Bookings in advance are recommended.",
+            "id":25,
+            "place_id":13,
+            "updated_at":"2012-12-02T07:23:52Z"
+         }
+      ]
+   }
+]
+

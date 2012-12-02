@@ -1,0 +1,82 @@
+[
+   {
+      "city":"El Nido",
+      "country":"Philippines",
+      "created_at":"2012-12-02T07:25:27Z",
+      "id":14,
+      "month":4,
+      "rain":"23mm",
+      "season":"High",
+      "temperature":91,
+      "updated_at":"2012-12-02T07:25:27Z",
+      "mustsees":[
+
+      ],
+      "badges":[
+         {
+            "badge":9,
+            "created_at":"2012-12-02T07:25:51Z",
+            "desc":"April and May are the hottest months in the Philippines and spending them on a beach makes sense. Electricity in El Nido is limited to afternoon and night use only, so without a fan or AC it might be extremely hot inside.",
+            "id":26,
+            "place_id":14,
+            "updated_at":"2012-12-02T07:25:51Z"
+         },
+         {
+            "badge":3,
+            "created_at":"2012-12-02T07:26:12Z",
+            "desc":"The water visibility reaches up to 100 feet in April, so it\u2019s the best time to do your snorkeling around the rock formations and uninhabited islands surrounding El Nido.",
+            "id":27,
+            "place_id":14,
+            "updated_at":"2012-12-02T07:26:12Z"
+         }
+      ]
+   },
+   {
+      "city":"El Nido",
+      "country":"Philippines",
+      "created_at":"2012-12-02T07:27:31Z",
+      "id":15,
+      "month":8,
+      "rain":"433mm",
+      "season":"Low",
+      "temperature":86,
+      "updated_at":"2012-12-02T07:27:31Z",
+      "mustsees":[
+         {
+            "created_at":"2012-12-02T07:29:52Z",
+            "desc":"Visit The Alternative guest house for an overnight trip & camping on one of the islands their family owns",
+            "id":11,
+            "place_id":15,
+            "title":"Homestay on an island",
+            "updated_at":"2012-12-02T07:29:52Z"
+         }
+      ],
+      "badges":[
+         {
+            "badge":4,
+            "created_at":"2012-12-02T07:27:52Z",
+            "desc":"Rain season in the Philippines is likely to be accompanied by strong storms and wind. The rainfall in August is one of the heaviest in the entire South East Asia, so be prepared for some difficulties to travel to and from El Nido - some parts of the road to El Nido resemble offroad. ",
+            "id":28,
+            "place_id":15,
+            "updated_at":"2012-12-02T07:27:52Z"
+         },
+         {
+            "badge":12,
+            "created_at":"2012-12-02T07:28:28Z",
+            "desc":"In addition to heavy rain summer months occasionally bring typhoons from the Pacific ocean. El Nido is located about 200 miles from Luzon island in the North which suffers the most destruction from typhoons, however if you stay at one of the beach accommodations in El Nido the storm caused by typhoon may force you to move away from the beach for your safety.",
+            "id":29,
+            "place_id":15,
+            "updated_at":"2012-12-02T07:28:28Z"
+         },
+         {
+            "badge":7,
+            "created_at":"2012-12-02T07:28:44Z",
+            "desc":"In addition to limited electricity in El Nido storms can cause blackouts during power on hours as well. The entire coast may end up without power for several days during storms.",
+            "id":30,
+            "place_id":15,
+            "updated_at":"2012-12-02T07:28:44Z"
+         }
+      ]
+   }
+]
+
