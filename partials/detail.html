@@ -13,7 +13,7 @@
         <div ng-repeat="badge in data.badges">
             <div class="box">
                 <div class="badge">
-                    <h3>{{badge.name}}</h3>
+                    <h3>{{getBadgeName(badge.name)}}</h3>
                 </div>
                 <p>{{badge.content}}</p>
             </div>

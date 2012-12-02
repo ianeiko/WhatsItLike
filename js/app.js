@@ -25,6 +25,24 @@ angular.module('whatsitlikeServices', [])
 
 
 function MainApp($scope, $http, $routeParams, sharedProperties){
+    
+    scope.getBadgeName = function(badge) {
+      switch (badge) {
+        case 1: return "High costs";
+        case 2: return "Lots of tourists";
+        case 3: return "Best time for snorkeling";
+        case 4: return "Rain season";
+        case 5: return "Mosquito time";
+        case 6: return "Floods";
+        case 7: return "Power blackouts";
+        case 8: return "Suspended flight services";
+        case 9: return "Very hot";
+        case 10: return "Time to party";
+        case 11: return "Very cold";
+        case 12: return "Typhoon season";
+      }
+    }
+
     if($routeParams.place && $routeParams.month){
         var place = $routeParams.place,
             month = $routeParams.month;
@@ -142,3 +160,5 @@ function loadMap(){
     map.ui.attribution.add()
       .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
 }
+
+
