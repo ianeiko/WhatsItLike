@@ -33,7 +33,7 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
         document.documentElement.className = '';
 
         // set active month
-        document.getElementById('main-nav').setAttribute('data-active', month);
+        updateNav(month);
         
         // set state variable
         sharedProperties.setProperty({
@@ -57,7 +57,7 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
         })
 
         // clear active month
-        document.getElementById('main-nav').setAttribute('data-active', 0);
+        updateNav(0);
 
         // load map
         loadMap();
@@ -71,6 +71,23 @@ function MainNav($scope, $location, sharedProperties){
             $location.path('/places/'+state.place+'/'+month);    
         }
     }
+}
+
+function updateNav(month){
+    var nav = document.getElementById('main-nav'),
+        navItems = nav.getElementsByTagName('li'),
+        activeMonths = [3, 10, 12];
+
+    nav.setAttribute('data-active', month);
+
+    for (var i = 0; i < navItems.length; i++) {
+        var isActive = activeMonths.indexOf(i + 1) > -1;
+        if(isActive){
+            navItems[i].className = '';  
+        }else{
+            navItems[i].className = 'disabled';
+        }
+    };
 }
 
 function loadMap(){
