@@ -1,0 +1,92 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>City:</b>
+  <%= @place.city %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @place.country %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= @place.month %>
+</p>
+
+<p>
+  <b>Rain:</b>
+  <%= @place.rain %>
+</p>
+
+<p>
+  <b>Temperature:</b>
+  <%= @place.temperature %>
+</p>
+
+<p>
+  <b>Season:</b>
+  <%= @place.season %>
+</p>
+
+<h2>Badges</h2>
+<% @place.badges.each do |b| %>
+  <p>
+    <b>Badge:</b>
+    <%= b.badge %>
+  </p>
+ 
+  <p>
+    <b>Description:</b>
+    <%= b.desc %>
+  </p>
+<% end %>
+
+<h2>Must Sees!</h2>
+<% @place.mustsees.each do |m| %>
+  <p>
+    <b>Name:</b>
+    <%= m.title %>
+  </p>
+ 
+  <p>
+    <b>Description:</b>
+    <%= m.desc %>
+  </p>
+<% end %>
+
+
+<h2>Add a Badge:</h2>
+<%= form_for([@place, @place.badges.build]) do |f| %>
+  <div class="field">
+    <%= f.label :badge %><br />
+    <%= f.number_field :badge %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<h2>Add a Must See:</h2>
+<%= form_for([@place, @place.mustsees.build]) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

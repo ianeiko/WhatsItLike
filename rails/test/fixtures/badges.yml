@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  badge: 1
+  desc: MyText
+  place: 
+
+two:
+  badge: 1
+  desc: MyText
+  place: 
