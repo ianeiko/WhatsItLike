@@ -2,7 +2,8 @@
 @import url(main.css);
 @import "http://fonts.googleapis.com/css?family=Scada:700";
 body {
-  color: #222; }
+  color: #222;
+  background-color: #f3f3f3; }
 
 a {
   color: #2ba6cb;
@@ -12,7 +13,7 @@ a {
 /* ------------------------------- */
 #head {
   width: 100%;
-  height: 100px;
+  height: 50px;
   position: absolute;
   *zoom: 1; }
   #head:before, #head:after {
@@ -22,13 +23,20 @@ a {
     clear: both; }
   #head h2 {
     margin: 0;
-    padding: 0; }
+    padding: 0 0 0 20px;
+    line-height: 50px;
+    font-size: 30px; }
   #head ul {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    z-index: 100;
     *zoom: 1;
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 100%; }
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6); }
     #head ul:before, #head ul:after {
       display: table;
       content: ""; }
@@ -42,7 +50,14 @@ a {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       padding: 10px;
+      height: 50px;
+      line-height: 35px;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
       cursor: pointer; }
+    #head ul li.disabled {
+      opacity: 0.2; }
   #head ul[data-active="1"] li:nth-child(1),
   #head ul[data-active="2"] li:nth-child(2),
   #head ul[data-active="3"] li:nth-child(3),
@@ -60,7 +75,7 @@ a {
 /* MAIN */
 /* ------------------------------- */
 #main {
-  padding: 100px 0 0;
+  padding: 50px 0 0;
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -70,6 +85,7 @@ a {
     #main h1 span {
       display: block; }
   #main h2 {
+    font-family: 'Scada', sans-serif;
     text-align: center; }
 
 /* CONTENT */
@@ -110,7 +126,11 @@ a {
       clear: both; }
   #main .content .box {
     width: 33%;
-    float: left; }
+    float: left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 15px; }
   #main .content .box.full {
     width: 100%; }
 

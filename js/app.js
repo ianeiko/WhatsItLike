@@ -51,7 +51,7 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
         document.documentElement.className = '';
 
         // set active month
-        document.getElementById('main-nav').setAttribute('data-active', month);
+        updateNav(month);
         
         // set state variable
         sharedProperties.setProperty({
@@ -61,7 +61,13 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
 
         // fetch data
         $http.get('data/'+place+'.json').success(function(data) {
-            $scope.data = data;
+
+            for (var i = 0; i < data.length; i++) {
+                if(month == data[i].month){
+                    $scope.data = data[i];
+                }
+            };
+            
         });
 
     }else{
@@ -75,7 +81,7 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
         })
 
         // clear active month
-        document.getElementById('main-nav').setAttribute('data-active', 0);
+        updateNav(0);
 
         // load map
         loadMap();
@@ -84,11 +90,31 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
 
 function MainNav($scope, $location, sharedProperties){
     $scope.changeMonth = function(month){
-        var state = sharedProperties.getProperty();
-        if(state.place){
+        var state = sharedProperties.getProperty(),
+            navItems = document.getElementById('main-nav').getElementsByTagName('li'),
+            currentItem = navItems[month-1];
+
+        if(state.place && currentItem.className != 'disabled'){
             $location.path('/places/'+state.place+'/'+month);    
         }
     }
+}
+
+function updateNav(month){
+    var nav = document.getElementById('main-nav'),
+        navItems = nav.getElementsByTagName('li'),
+        activeMonths = [3, 8, 12];
+
+    nav.setAttribute('data-active', month);
+
+    for (var i = 0; i < navItems.length; i++) {
+        var isActive = activeMonths.indexOf(i + 1) > -1;
+        if(isActive){
+            navItems[i].className = '';  
+        }else{
+            navItems[i].className = 'disabled';
+        }
+    };
 }
 
 function loadMap(){
