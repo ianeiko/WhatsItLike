@@ -5,14 +5,28 @@
             <span>{{data.city}}</span><br />
             <span>{{data.country}}</span>
         </h1>
+
+        <div class="quick-info">
+            <p><b>Rain:</b> {{data.rain}}</p>
+            <p><b>Temperature:</b> {{data.temperature}}F</p>
+            <p><b>Season:</b> {{data.season}}</p>
+            <div class="head-badges" ng-show="data.badges">
+                <div ng-repeat="badge in data.badges" class="badge-bubble">
+                    <img src="img/badges/{{badge.badge}}.png" />
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="section">
+    <div class="section even-{{data.badges.length % 2 == 0}} only-{{data.badges.length == 1}}" ng-show="data.badges">
         <h2>What's {{data.city}} like</h2>
         
         <div ng-repeat="badge in data.badges">
             <div class="box">
                 <div class="badge">
+                    <div class="badge-bubble">
+                        <img src="img/badges/{{badge.badge}}.png" />
+                    </div>
                     <h3>{{getBadgeName(badge.badge)}}</h3>
                 </div>
                 <p>{{badge.desc}}</p>
@@ -20,7 +34,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" ng-show="data.mustsees">
         <h2>Things not to miss</h2>
 
         <div ng-repeat="mustsee in data.mustsees">

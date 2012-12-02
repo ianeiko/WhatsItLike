@@ -99,6 +99,24 @@ $headHeight: 50px;
         font-family: 'Scada', sans-serif;
         text-align: center;
     }
+
+    /* badge */
+    .badge-bubble {
+        margin: 0 auto;
+        text-align: center;
+        width: 55px;
+        height: 55px;
+        padding: 15px;
+        background: rgba(#000, 0.1);
+        @include border-radius(25px);
+        img {
+            
+        }
+    }
+
+    .profile-intro .badge-bubble {
+        background: rgba(#fff, 0.5);
+    }
 }
 
 /* CONTENT */
@@ -136,8 +154,33 @@ $headHeight: 50px;
                 margin-bottom: 10px;
             }
         }
+
+        .quick-info {
+            position: absolute;
+            right: 25px;
+            bottom: 35px;
+
+            p {
+                display: inline-block;
+                color: #000;
+                font-size: 20px;
+                padding: 5px 10px;
+                margin-right: 10px;
+                @include border-radius(5px);
+
+                background: rgba(#fff, 0.5);
+            }
+
+            .badge-bubble {
+                display: inline-block;
+                float: right;
+                margin-right: 10px;
+            }
+        }
     }
 
+
+    /* section */
     .section {
         width: 1000px;
         margin: 0 auto 25px;
@@ -149,8 +192,17 @@ $headHeight: 50px;
         float: left;
         @include box-sizing-border-box;
         padding: 0 15px;
+
+        h3 {
+            text-align: center;
+        }
     }
 
+    .even-true .box {
+        width: 50%;
+    }
+
+    .only-true .box,
     .box.full {
         width: 100%;
     }
