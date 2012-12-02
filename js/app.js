@@ -1,4 +1,4 @@
-angular.module('whatsitlike', []).
+angular.module('whatsitlike', ['whatsitlikeServices']).
     config(['$routeProvider', function($routeProvider) {
     $routeProvider.
         when('/app', {templateUrl: 'partials/map.html',   controller: MainApp}).
@@ -6,7 +6,25 @@ angular.module('whatsitlike', []).
         otherwise({redirectTo: '/app'});
 }]);
 
-function MainApp($scope, $http, $routeParams){
+angular.module('whatsitlikeServices', [])
+    .service('sharedProperties', function () {
+        var state = {
+            month: 0,
+            place: ''
+        }
+
+        return {
+            getProperty:function () {
+                return state;
+            },
+            setProperty:function (value) {
+                state = value;
+            }
+        };
+});
+
+
+function MainApp($scope, $http, $routeParams, sharedProperties){
     if($routeParams.place && $routeParams.month){
         var place = $routeParams.place,
             month = $routeParams.month;
@@ -17,6 +35,12 @@ function MainApp($scope, $http, $routeParams){
         // set active month
         document.getElementById('main-nav').setAttribute('data-active', month);
         
+        // set state variable
+        sharedProperties.setProperty({
+            month: month, 
+            place: place
+        })
+
         // fetch data
         $http.get('data/'+place+'.json').success(function(data) {
             $scope.data = data;
@@ -26,14 +50,26 @@ function MainApp($scope, $http, $routeParams){
         // set view class
         document.documentElement.className = 'map';
 
+        // clear state variable
+        sharedProperties.setProperty({
+            month: 0, 
+            place: ''
+        })
+
+        // clear active month
+        document.getElementById('main-nav').setAttribute('data-active', 0);
+
         // load map
         loadMap();
     }
 }
 
-function MainNav($scope, $location){
+function MainNav($scope, $location, sharedProperties){
     $scope.changeMonth = function(month){
-        $location.path('/places/bali/'+month);
+        var state = sharedProperties.getProperty();
+        if(state.place){
+            $location.path('/places/'+state.place+'/'+month);    
+        }
     }
 }
 
