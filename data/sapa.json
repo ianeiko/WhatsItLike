@@ -1,6 +1,7 @@
 [
    {
       "city":"Sa Pa",
+      "slug":"sapa",
       "country":"Vietnam",
       "created_at":"2012-12-02T07:21:36Z",
       "id":12,
@@ -25,6 +26,7 @@
    },
    {
       "city":"Sa Pa",
+      "slug":"sapa",
       "country":"Vietnam",
       "created_at":"2012-12-02T07:23:05Z",
       "id":13,

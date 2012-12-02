@@ -1,6 +1,6 @@
 <div class="content">
     <div class="profile-intro">
-        <div class="head-img" style="background-image: url(img/{{data.city | lowercase}}/head-{{data.month}}.jpg)"></div>
+        <div class="head-img" style="background-image: url(img/{{data.slug | lowercase}}/head-{{data.month}}.jpg)"></div>
         <h1>
             <span>{{data.city}}</span><br />
             <span>{{data.country}}</span>
@@ -13,7 +13,7 @@
         <div ng-repeat="badge in data.badges">
             <div class="box">
                 <div class="badge">
-                    <h3>{{badge.badge}}</h3>
+                    <h3>{{getBadgeName(badge.badge)}}</h3>
                 </div>
                 <p>{{badge.desc}}</p>
             </div>

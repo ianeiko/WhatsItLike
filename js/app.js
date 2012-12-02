@@ -25,23 +25,6 @@ angular.module('whatsitlikeServices', [])
 
 
 function MainApp($scope, $http, $routeParams, sharedProperties){
-    
-    scope.getBadgeName = function(badge) {
-      switch (badge) {
-        case 1: return "High costs";
-        case 2: return "Lots of tourists";
-        case 3: return "Best time for snorkeling";
-        case 4: return "Rain season";
-        case 5: return "Mosquito time";
-        case 6: return "Floods";
-        case 7: return "Power blackouts";
-        case 8: return "Suspended flight services";
-        case 9: return "Very hot";
-        case 10: return "Time to party";
-        case 11: return "Very cold";
-        case 12: return "Typhoon season";
-      }
-    }
 
     if($routeParams.place && $routeParams.month){
         var place = $routeParams.place,
@@ -49,24 +32,26 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
 
         // set view class
         document.documentElement.className = '';
-
-        // set active month
-        updateNav(month);
         
         // set state variable
         sharedProperties.setProperty({
             month: month, 
             place: place
-        })
+        });
 
         // fetch data
         $http.get('data/'+place+'.json').success(function(data) {
-
+            var activeMonths = [];
+            
             for (var i = 0; i < data.length; i++) {
+                activeMonths.push(data[i].month);
                 if(month == data[i].month){
                     $scope.data = data[i];
                 }
-            };
+            }
+
+            // set active month
+            updateNav(month, activeMonths);
             
         });
 
@@ -86,6 +71,23 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
         // load map
         loadMap();
     }
+
+    $scope.getBadgeName = function(badge) {
+      switch (badge) {
+        case 1: return "High costs";
+        case 2: return "Lots of tourists";
+        case 3: return "Best time for snorkeling";
+        case 4: return "Rain season";
+        case 5: return "Mosquito time";
+        case 6: return "Floods";
+        case 7: return "Power blackouts";
+        case 8: return "Suspended flight services";
+        case 9: return "Very hot";
+        case 10: return "Time to party";
+        case 11: return "Very cold";
+        case 12: return "Typhoon season";
+      }
+    }
 }
 
 function MainNav($scope, $location, sharedProperties){
@@ -100,21 +102,22 @@ function MainNav($scope, $location, sharedProperties){
     }
 }
 
-function updateNav(month){
+function updateNav(month, activeMonths){
     var nav = document.getElementById('main-nav'),
-        navItems = nav.getElementsByTagName('li'),
-        activeMonths = [3, 8, 12];
+        navItems = nav.getElementsByTagName('li');
 
     nav.setAttribute('data-active', month);
 
-    for (var i = 0; i < navItems.length; i++) {
-        var isActive = activeMonths.indexOf(i + 1) > -1;
-        if(isActive){
-            navItems[i].className = '';  
-        }else{
-            navItems[i].className = 'disabled';
-        }
-    };
+    if(month > 0 && activeMonths){
+        for (var i = 0; i < navItems.length; i++) {
+            var isActive = activeMonths.indexOf(i + 1) > -1;
+            if(isActive){
+                navItems[i].className = '';  
+            }else{
+                navItems[i].className = 'disabled';
+            }
+        };
+    }
 }
 
 function loadMap(){
@@ -122,35 +125,28 @@ function loadMap(){
         "geometry": { "type": "Point", "coordinates": [103.8871694, 22.3094655]},
         "properties": {
             "image": "http://upload.wikimedia.org/wikipedia/commons/1/1f/Sapa3.jpg",
-            "url": "#/places/bali/1",
+            "url": "#/places/sapa/6",
             "city": "Sa Pa, Vietnam"
-        }
-    }, {
-        "geometry": { "type": "Point", "coordinates": [95.3542159,5.5640231]},
-        "properties": {
-            "image": "http://www.unlvasa.org/wp-content/uploads/2010/03/aceh_besar-batur_rahman.jpg",
-            "url": "#/places/bali/1",
-            "city": "Aceh, Indonesia"
         }
     }, {
         "geometry": { "type": "Point", "coordinates": [103.864403,13.36866]},
         "properties": {
             "image": "http://upload.wikimedia.org/wikipedia/commons/7/77/Siemreap.jpg",
-            "url": "#/places/bali/1",
+            "url": "#/places/siemreap/4",
             "city": "Siem Reap, Cambodia"
         }
     }, {
         "geometry": { "type": "Point", "coordinates": [119.38749540042421,11.179478273369376]},
         "properties": {
             "image": "http://upload.wikimedia.org/wikipedia/commons/7/77/ElNido_Bay_Palawan.jpg",
-            "url": "#/places/bali/1",
+            "url": "#/places/elnido/8",
             "city": "El Nido, Palawan, Philippines"
         }
      }, {
          "geometry": { "type": "Point", "coordinates": [115.26004893465226,-8.458092963238881]},
          "properties": {
             "image": "http://inzumi.com/images/destinations/ID_Bali_Reiseziel_7.jpg",
-            "url": "#/places/bali/1",
+            "url": "#/places/bali/8",
             "city": "Bali, Indonesia"
          }
      }];
