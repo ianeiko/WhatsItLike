@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="map" ng-app>
+<html lang="en" ng-app="whatsitlike">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,105 +12,32 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js"></script>
         <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
-        <script src="js/main.js"></script>
+        <script src="js/app.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div id="head">
-            <h2>What's It Like</h2>
-            <ul>
-                <li><a href="#">Jan</a></li>
-                <li><a href="#">Feb</a></li>
-                <li><a href="#">Mar</a></li>
-                <li><a href="#">Apr</a></li>
-                <li><a href="#">May</a></li>
-                <li><a href="#">Jun</a></li>
-                <li><a href="#">Jul</a></li>
-                <li><a href="#">Aug</a></li>
-                <li><a href="#">Sep</a></li>
-                <li><a href="#">Oct</a></li>
-                <li><a href="#">Nov</a></li>
-                <li><a href="#">Dec</a></li>
+        <div ng-controller="MainNav" id="head">
+            <h2><a href="#/app" title="Home">What's It Like</a></h2>
+            <ul id="main-nav" data-active="0">
+                <li ng-click="changeMonth(1)">Jan</li>
+                <li ng-click="changeMonth(2)">Feb</li>
+                <li ng-click="changeMonth(3)">Mar</li>
+                <li ng-click="changeMonth(4)">Apr</li>
+                <li ng-click="changeMonth(5)">May</li>
+                <li ng-click="changeMonth(6)">Jun</li>
+                <li ng-click="changeMonth(7)">Jul</li>
+                <li ng-click="changeMonth(8)">Aug</li>
+                <li ng-click="changeMonth(9)">Sep</li>
+                <li ng-click="changeMonth(10)">Oct</li>
+                <li ng-click="changeMonth(11)">Nov</li>
+                <li ng-click="changeMonth(12)">Dec</li>
             </ul>
         </div>
 
-        <div id="main" ng-controller="MainApp">
-            <div id="map"></div>
-        </div>
-
-        <script>
-
-        var features = [{
-            "geometry": { "type": "Point", "coordinates": [103.8871694, 22.3094655]},
-            "properties": {
-                "image": "http://upload.wikimedia.org/wikipedia/commons/1/1f/Sapa3.jpg",
-                "url": "http://en.wikipedia.org/wiki/Sa_Pa",
-                "city": "Sa Pa, Vietnam"
-            }
-        }, {
-            "geometry": { "type": "Point", "coordinates": [95.3542159,5.5640231]},
-            "properties": {
-                "image": "http://www.unlvasa.org/wp-content/uploads/2010/03/aceh_besar-batur_rahman.jpg",
-                "url": "http://en.wikipedia.org/wiki/Aceh",
-                "city": "Aceh, Indonesia"
-            }
-        }, {
-            "geometry": { "type": "Point", "coordinates": [103.864403,13.36866]},
-            "properties": {
-                "image": "http://upload.wikimedia.org/wikipedia/commons/7/77/Siemreap.jpg",
-                "url": "http://en.wikipedia.org/wiki/Siem_Reap",
-                "city": "Siem Reap, Cambodia"
-            }
-        }, {
-            "geometry": { "type": "Point", "coordinates": [119.38749540042421,11.179478273369376]},
-            "properties": {
-                "image": "http://upload.wikimedia.org/wikipedia/commons/7/77/ElNido_Bay_Palawan.jpg",
-                "url": "http://en.wikipedia.org/wiki/El_Nido,_Palawan",
-                "city": "El Nido, Palawan, Philippines"
-            }
-         }, {
-             "geometry": { "type": "Point", "coordinates": [115.26004893465226,-8.458092963238881]},
-             "properties": {
-                "image": "http://inzumi.com/images/destinations/ID_Bali_Reiseziel_7.jpg",
-                "url": "http://en.wikipedia.org/wiki/Bali",
-                "city": "Bali, Indonesia"
-             }
-         }];
-
-
-        // Create map
-        var map = mapbox.map('map');
-        map.addLayer(mapbox.layer().id('jneiku.map-cz9jmzy0'));
-
-        // Create and add marker layer
-        var markerLayer = mapbox.markers.layer().features(features);
-        var interaction = mapbox.markers.interaction(markerLayer);
-        map.addLayer(markerLayer);
-
-        // Set a custom formatter for tooltips
-        // Provide a function that returns html to be used in tooltip
-        interaction.formatter(function(feature) {
-        var o = '<a target="_blank" href="' + feature.properties.url + '">' +
-            '<img src="' + feature.properties.image + '"' + 'width="300" height="200" >' +
-            '<h2>' + feature.properties.city + '</h2>' +
-            '</a>';
-
-        return o;
-        });
-
-        // Set iniital center and zoom
-        map.centerzoom({
-           lat: 10.36866,
-           lon: 108.864403
-        }, 5);
-
-        // Attribute map
-        map.ui.attribution.add()
-          .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
-        </script>
+        <div id="main" ng-view></div>
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

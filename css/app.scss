@@ -31,7 +31,7 @@ html.map, html.map body {
     position: absolute;
     @include clearfix;
 
-    h1 {
+    h2 {
         margin: 0;
         padding: 0;        
     }
@@ -44,9 +44,30 @@ html.map, html.map body {
         width: 100%;
 
         li {
+            display: inline-block;
             width: (100% / 12);
             float: left;
+
+            @include box-sizing-border-box;
+            padding: 10px;
+
+            cursor: pointer;
         }
+    }
+
+    ul[data-active="1"] li:nth-child(1),
+    ul[data-active="2"] li:nth-child(2),
+    ul[data-active="3"] li:nth-child(3),
+    ul[data-active="4"] li:nth-child(4),
+    ul[data-active="5"] li:nth-child(5),
+    ul[data-active="6"] li:nth-child(6),
+    ul[data-active="7"] li:nth-child(7),
+    ul[data-active="8"] li:nth-child(8),
+    ul[data-active="9"] li:nth-child(9),
+    ul[data-active="10"] li:nth-child(10),
+    ul[data-active="11"] li:nth-child(11),
+    ul[data-active="12"] li:nth-child(12) {
+        background: rgba(#000, 0.2);
     }
 }
 
