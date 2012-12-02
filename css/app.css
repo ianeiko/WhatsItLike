@@ -1,6 +1,9 @@
 @import url(normalize.min.css);
 @import url(main.css);
 @import "http://fonts.googleapis.com/css?family=Scada:700";
+html, body {
+  width: 100%; }
+
 body {
   color: #222;
   background-color: #f3f3f3; }
@@ -13,6 +16,7 @@ a {
 /* ------------------------------- */
 #head {
   width: 100%;
+  min-width: 800px;
   height: 50px;
   position: absolute;
   *zoom: 1; }
@@ -80,14 +84,21 @@ a {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  *zoom: 1;
   /* badge */ }
+  #main:before, #main:after {
+    display: table;
+    content: ""; }
+  #main:after {
+    clear: both; }
   #main h1 {
     font-size: 20px; }
     #main h1 span {
       display: block; }
   #main h2 {
     font-family: 'Scada', sans-serif;
-    text-align: center; }
+    text-align: center;
+    font-size: 36px; }
   #main .badge-bubble {
     margin: 0 auto;
     text-align: center;
@@ -104,6 +115,8 @@ a {
 /* CONTENT */
 /* ------------------------------- */
 #main .content {
+  width: 100%;
+  min-width: 800px;
   /* intro */
   /* section */ }
   #main .content .profile-intro {
@@ -111,6 +124,7 @@ a {
     #main .content .profile-intro .head-img {
       display: block;
       min-height: 450px;
+      width: 100%;
       overflow: hidden;
       background-position: center center;
       -webkit-background-size: cover; }
@@ -148,14 +162,18 @@ a {
         float: right;
         margin-right: 10px; }
   #main .content .section {
-    width: 1000px;
-    margin: 0 auto 25px;
-    *zoom: 1; }
+    width: 800px;
+    margin: 0 auto 0;
+    *zoom: 1;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #000; }
     #main .content .section:before, #main .content .section:after {
       display: table;
       content: ""; }
     #main .content .section:after {
       clear: both; }
+  #main .content .section:last-child {
+    border-width: 0; }
   #main .content .box {
     width: 33%;
     float: left;
@@ -178,11 +196,12 @@ html.map, html.map body {
   overflow: hidden; }
   html.map #main, html.map body #main {
     height: 100%; }
-  html.map #head ul li, html.map body #head ul li {
-    opacity: .3;
-    cursor: auto; }
+  html.map #head ul, html.map body #head ul {
+    display: none; }
 
 #map {
   background-color: #000;
   width: 100%;
   height: 100%; }
+  #map h3 {
+    font-size: 14px; }

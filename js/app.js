@@ -126,28 +126,36 @@ function loadMap(){
         "properties": {
             "image": "http://upload.wikimedia.org/wikipedia/commons/1/1f/Sapa3.jpg",
             "url": "#/places/sapa/6",
-            "city": "Sa Pa, Vietnam"
+            "city": "Sa Pa, Vietnam",
+            "marker-color": '#ffc84e', // yellow
+            "marker-size": "large"
         }
     }, {
         "geometry": { "type": "Point", "coordinates": [103.864403,13.36866]},
         "properties": {
             "image": "http://upload.wikimedia.org/wikipedia/commons/7/77/Siemreap.jpg",
             "url": "#/places/siemreap/4",
-            "city": "Siem Reap, Cambodia"
+            "city": "Siem Reap, Cambodia",
+            "marker-color": '#ffc84e', // yellow
+            "marker-size": "large"
         }
     }, {
         "geometry": { "type": "Point", "coordinates": [119.38749540042421,11.179478273369376]},
         "properties": {
             "image": "http://upload.wikimedia.org/wikipedia/commons/7/77/ElNido_Bay_Palawan.jpg",
             "url": "#/places/elnido/8",
-            "city": "El Nido, Palawan, Philippines"
+            "city": "El Nido, Palawan, Philippines",
+            "marker-color": '#f63a39', // red
+            "marker-size": "large"
         }
      }, {
          "geometry": { "type": "Point", "coordinates": [115.26004893465226,-8.458092963238881]},
          "properties": {
             "image": "http://inzumi.com/images/destinations/ID_Bali_Reiseziel_7.jpg",
             "url": "#/places/bali/8",
-            "city": "Bali, Indonesia"
+            "city": "Bali, Indonesia",
+            "marker-color": '#71bc4e', // green
+            "marker-size": "large"
          }
      }];
 
@@ -165,8 +173,7 @@ function loadMap(){
     // Provide a function that returns html to be used in tooltip
     interaction.formatter(function(feature) {
     var o = '<a href="' + feature.properties.url + '">' +
-        '<img src="' + feature.properties.image + '"' + 'width="300" height="200" >' +
-        '<h2>' + feature.properties.city + '</h2>' +
+        '<h3>' + feature.properties.city + '</h3>' +
         '</a>';
 
     return o;
@@ -174,13 +181,9 @@ function loadMap(){
 
     // Set iniital center and zoom
     map.centerzoom({
-       lat: 10.36866,
+       lat: 8.36866,
        lon: 108.864403
     }, 5);
-
-    // Attribute map
-    map.ui.attribution.add()
-      .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
 }
 
 

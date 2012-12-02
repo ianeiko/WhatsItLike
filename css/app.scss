@@ -3,6 +3,10 @@
 @import "main.css";
 @import "http://fonts.googleapis.com/css?family=Scada:700";
 
+html, body {
+    width: 100%;
+}
+
 body {
     color: #222;
     background-color: #f3f3f3;
@@ -20,6 +24,7 @@ $headHeight: 50px;
 /* ------------------------------- */
 #head {
     width: 100%;
+    min-width: 800px;
     height: $headHeight;
     position: absolute;
     @include clearfix;
@@ -87,6 +92,7 @@ $headHeight: 50px;
     padding: $headHeight 0 0;
     width: 100%;
     @include box-sizing-border-box;
+    @include clearfix;
 
     h1 {
         font-size: 20px;
@@ -98,6 +104,7 @@ $headHeight: 50px;
     h2 {
         font-family: 'Scada', sans-serif;
         text-align: center;
+        font-size: 36px;
     }
 
     /* badge */
@@ -122,6 +129,8 @@ $headHeight: 50px;
 /* CONTENT */
 /* ------------------------------- */
 #main .content {
+    width: 100%;
+    min-width: 800px;
 
     /* intro */
     .profile-intro {
@@ -130,6 +139,7 @@ $headHeight: 50px;
         .head-img {
             display: block;
             min-height: 450px;
+            width: 100%;
             overflow: hidden;
             background-position: center center;
             -webkit-background-size: cover;
@@ -182,9 +192,16 @@ $headHeight: 50px;
 
     /* section */
     .section {
-        width: 1000px;
-        margin: 0 auto 25px;
+        width: 800px;
+        margin: 0 auto 0;
         @include clearfix;
+
+        padding-bottom: 25px;
+        border-bottom: 1px solid #000;
+    }
+
+    .section:last-child {
+        border-width: 0;
     }
 
     .box {
@@ -218,9 +235,8 @@ html.map, html.map body {
         height: 100%;
     }
 
-    #head ul li {
-        opacity: .3;
-        cursor: auto;
+    #head ul {
+        display: none;
     }
 }
 
@@ -228,4 +244,9 @@ html.map, html.map body {
     background-color: #000;
     width: 100%;
     height: 100%;
+
+    h3 {
+        font-size: 14px;
+
+    }
 }
