@@ -1,0 +1,79 @@
+@mixin clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin size($h, $w) {
+    width: $w;
+    height: $h;
+}
+
+@mixin shadowX {
+    border-bottom: 1px solid rgba(0, 0, 0, .5);   
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+@mixin shadowY {
+    border-right: 1px solid rgba(0, 0, 0, .3);   
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+@mixin box-sizing-border-box {
+ -moz-box-sizing:    border-box;
+ -webkit-box-sizing: border-box;
+ box-sizing:        border-box;
+}
+
+@mixin unselectable {
+ -moz-user-select: none;
+ -webkit-user-select: none;
+ user-select: none;
+}
+
+@mixin abs-stretch($position: absolute) {
+  @include box-sizing-border-box;
+  position: $position;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin stretch($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  @include box-sizing-border-box;
+  position: absolute;
+  top:$top;
+  right:$right;
+  bottom:$bottom;
+  left:$left;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin linear-gradient-background($color-from, $color-to) {
+  background-image: -moz-linear-gradient(top, $color-from, $color-to);
+  background-image: -webkit-gradient(linear, left top, left bottom, from($color-from), to($color-to));
+  background-image: linear-gradient(top, $color-from, $color-to); /* CSS3 */
+}
+
+@mixin linear-gradient-background-adv($color-from, $color-to, $from-location: center top, $to-location: center bottom, $from-offset: 0%, $to-offset: 100%) {
+  background-image: -moz-linear-gradient($from-location, $color-from $from-offset, $color-to $to-offset);
+  background-image: -webkit-gradient(linear, $from-location, $to-location, color-stop($from-offset, $color-from), color-stop($to-offset, $color-to));
+  background-image: linear-gradient($from-location, $color-from $from-offset, $color-to $to-offset); /* CSS3 */
+}

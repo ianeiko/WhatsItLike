@@ -1,0 +1,92 @@
+@import url(normalize.min.css);
+@import url(main.css);
+body {
+  color: #222; }
+
+a {
+  color: #2ba6cb;
+  text-decoration: none; }
+
+/* MAP VIEW */
+/* ------------------------------- */
+html.map, html.map body {
+  height: 100%;
+  overflow: hidden; }
+  html.map #main, html.map body #main {
+    height: 100%; }
+
+/* HEAD */
+/* ------------------------------- */
+#head {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  *zoom: 1; }
+  #head:before, #head:after {
+    display: table;
+    content: ""; }
+  #head:after {
+    clear: both; }
+  #head h1 {
+    margin: 0;
+    padding: 0; }
+  #head ul {
+    *zoom: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    #head ul:before, #head ul:after {
+      display: table;
+      content: ""; }
+    #head ul:after {
+      clear: both; }
+    #head ul li {
+      width: 8.33333%;
+      float: left; }
+
+/* MAIN */
+/* ------------------------------- */
+#main {
+  padding: 100px 0 0;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  #main h1 {
+    font-size: 20px; }
+    #main h1 span {
+      display: block; }
+  #main h2 {
+    text-align: center; }
+
+/* CONTENT */
+/* ------------------------------- */
+.content {
+  /* intro */ }
+  .content .profile-intro .head-img {
+    display: block;
+    min-height: 450px;
+    overflow: hidden;
+    background: url(../img/bali/head.jpg) center center;
+    background-position: fixed;
+    -webkit-background-size: cover; }
+  .content .section {
+    width: 600px;
+    margin: 0 auto 25px;
+    *zoom: 1; }
+    .content .section:before, .content .section:after {
+      display: table;
+      content: ""; }
+    .content .section:after {
+      clear: both; }
+  .content .box {
+    width: 33%;
+    float: left; }
+  .content .box.full {
+    width: 100%; }
+
+#map {
+  background-color: #000;
+  width: 100%;
+  height: 100%; }

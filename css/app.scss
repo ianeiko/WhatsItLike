@@ -1,0 +1,107 @@
+@import "util.scss";
+@import "normalize.min.css";
+@import "main.css";
+
+body {
+    color: #222;
+}
+
+a {
+    color: #2ba6cb;
+    text-decoration: none;
+}
+
+/* MAP VIEW */
+/* ------------------------------- */
+html.map, html.map body {
+    height: 100%;
+    overflow: hidden;
+
+    #main {
+        height: 100%;
+    }
+}
+
+/* HEAD */
+/* ------------------------------- */
+#head {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    @include clearfix;
+
+    h1 {
+        margin: 0;
+        padding: 0;        
+    }
+
+    ul {
+        @include clearfix;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        li {
+            width: (100% / 12);
+            float: left;
+        }
+    }
+}
+
+/* MAIN */
+/* ------------------------------- */
+#main {
+    padding: 100px 0 0;
+    width: 100%;
+    @include box-sizing-border-box;
+
+    h1 {
+        font-size: 20px;
+        span {
+            display: block;
+        }
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+/* CONTENT */
+/* ------------------------------- */
+.content {
+
+    /* intro */
+    .profile-intro {
+        .head-img {
+            display: block;
+            min-height: 450px;
+            overflow: hidden;
+            background: url(../img/bali/head.jpg) center center;
+            background-position: fixed;
+            -webkit-background-size: cover;
+        }
+    }
+
+    .section {
+        width: 600px;
+        margin: 0 auto 25px;
+        @include clearfix;
+    }
+
+    .box {
+        width: 33%;
+        float: left;
+    }
+
+    .box.full {
+        width: 100%;
+    }
+}
+
+#map {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
