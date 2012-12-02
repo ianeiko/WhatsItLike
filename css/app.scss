@@ -5,6 +5,7 @@
 
 body {
     color: #222;
+    background-color: #f3f3f3;
 }
 
 a {
@@ -27,6 +28,7 @@ $headHeight: 50px;
         margin: 0;
         padding: 0 0 0 20px;    
         line-height: $headHeight;
+        font-size: 30px;
     }
 
     ul {
@@ -94,6 +96,7 @@ $headHeight: 50px;
     }
 
     h2 {
+        font-family: 'Scada', sans-serif;
         text-align: center;
     }
 }
@@ -144,6 +147,8 @@ $headHeight: 50px;
     .box {
         width: 33%;
         float: left;
+        @include box-sizing-border-box;
+        padding: 0 15px;
     }
 
     .box.full {

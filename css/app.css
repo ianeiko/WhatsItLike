@@ -2,7 +2,8 @@
 @import url(main.css);
 @import "http://fonts.googleapis.com/css?family=Scada:700";
 body {
-  color: #222; }
+  color: #222;
+  background-color: #f3f3f3; }
 
 a {
   color: #2ba6cb;
@@ -23,7 +24,8 @@ a {
   #head h2 {
     margin: 0;
     padding: 0 0 0 20px;
-    line-height: 50px; }
+    line-height: 50px;
+    font-size: 30px; }
   #head ul {
     position: absolute;
     bottom: -50px;
@@ -83,6 +85,7 @@ a {
     #main h1 span {
       display: block; }
   #main h2 {
+    font-family: 'Scada', sans-serif;
     text-align: center; }
 
 /* CONTENT */
@@ -123,7 +126,11 @@ a {
       clear: both; }
   #main .content .box {
     width: 33%;
-    float: left; }
+    float: left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 15px; }
   #main .content .box.full {
     width: 100%; }
 

@@ -43,7 +43,13 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
 
         // fetch data
         $http.get('data/'+place+'.json').success(function(data) {
-            $scope.data = data;
+
+            for (var i = 0; i < data.length; i++) {
+                if(month == data[i].month){
+                    $scope.data = data[i];
+                }
+            };
+            
         });
 
     }else{
@@ -66,8 +72,11 @@ function MainApp($scope, $http, $routeParams, sharedProperties){
 
 function MainNav($scope, $location, sharedProperties){
     $scope.changeMonth = function(month){
-        var state = sharedProperties.getProperty();
-        if(state.place){
+        var state = sharedProperties.getProperty(),
+            navItems = document.getElementById('main-nav').getElementsByTagName('li'),
+            currentItem = navItems[month-1];
+
+        if(state.place && currentItem.className != 'disabled'){
             $location.path('/places/'+state.place+'/'+month);    
         }
     }
@@ -76,7 +85,7 @@ function MainNav($scope, $location, sharedProperties){
 function updateNav(month){
     var nav = document.getElementById('main-nav'),
         navItems = nav.getElementsByTagName('li'),
-        activeMonths = [3, 10, 12];
+        activeMonths = [3, 8, 12];
 
     nav.setAttribute('data-active', month);
 
