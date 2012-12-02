@@ -1,5 +1,6 @@
 @import url(normalize.min.css);
 @import url(main.css);
+@import "http://fonts.googleapis.com/css?family=Scada:700";
 body {
   color: #222; }
 
@@ -62,28 +63,45 @@ html.map, html.map body {
 
 /* CONTENT */
 /* ------------------------------- */
-.content {
+#main .content {
   /* intro */ }
-  .content .profile-intro .head-img {
-    display: block;
-    min-height: 450px;
-    overflow: hidden;
-    background: url(../img/bali/head.jpg) center center;
-    background-position: fixed;
-    -webkit-background-size: cover; }
-  .content .section {
-    width: 600px;
+  #main .content .profile-intro {
+    position: relative; }
+    #main .content .profile-intro .head-img {
+      display: block;
+      min-height: 450px;
+      overflow: hidden;
+      background: url(../img/bali/head.jpg) center center;
+      background-position: fixed;
+      -webkit-background-size: cover; }
+    #main .content .profile-intro h1 {
+      font-family: 'Scada', sans-serif;
+      font-size: 72px;
+      line-height: 72px;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); }
+      #main .content .profile-intro h1 span {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 7px 10px 3px;
+        margin-bottom: 10px; }
+  #main .content .section {
+    width: 1000px;
     margin: 0 auto 25px;
     *zoom: 1; }
-    .content .section:before, .content .section:after {
+    #main .content .section:before, #main .content .section:after {
       display: table;
       content: ""; }
-    .content .section:after {
+    #main .content .section:after {
       clear: both; }
-  .content .box {
+  #main .content .box {
     width: 33%;
     float: left; }
-  .content .box.full {
+  #main .content .box.full {
     width: 100%; }
 
 #map {

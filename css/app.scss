@@ -1,6 +1,7 @@
 @import "util.scss";
 @import "normalize.min.css";
 @import "main.css";
+@import "http://fonts.googleapis.com/css?family=Scada:700";
 
 body {
     color: #222;
@@ -70,10 +71,12 @@ html.map, html.map body {
 
 /* CONTENT */
 /* ------------------------------- */
-.content {
+#main .content {
 
     /* intro */
     .profile-intro {
+        position: relative;
+
         .head-img {
             display: block;
             min-height: 450px;
@@ -82,10 +85,30 @@ html.map, html.map body {
             background-position: fixed;
             -webkit-background-size: cover;
         }
+
+        h1 {
+            font-family: 'Scada', sans-serif;
+            font-size: 72px;
+            line-height: 72px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            
+            margin: 0;
+            color: #fff;
+            text-shadow: 5px 5px 5px rgba(#000, 0.2);
+
+            span {
+                display: inline-block;
+                background: rgba(#000, 0.2);
+                padding: 7px 10px 3px;
+                margin-bottom: 10px;
+            }
+        }
     }
 
     .section {
-        width: 600px;
+        width: 1000px;
         margin: 0 auto 25px;
         @include clearfix;
     }
