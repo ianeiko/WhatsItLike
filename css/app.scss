@@ -12,17 +12,6 @@ a {
     text-decoration: none;
 }
 
-/* MAP VIEW */
-/* ------------------------------- */
-html.map, html.map body {
-    height: 100%;
-    overflow: hidden;
-
-    #main {
-        height: 100%;
-    }
-}
-
 /* HEAD */
 /* ------------------------------- */
 #head {
@@ -102,8 +91,7 @@ html.map, html.map body {
             display: block;
             min-height: 450px;
             overflow: hidden;
-            background: url(../img/bali/head.jpg) center center;
-            background-position: fixed;
+            background-position: center center;
             -webkit-background-size: cover;
         }
 
@@ -141,6 +129,22 @@ html.map, html.map body {
 
     .box.full {
         width: 100%;
+    }
+}
+
+/* MAP VIEW */
+/* ------------------------------- */
+html.map, html.map body {
+    height: 100%;
+    overflow: hidden;
+
+    #main {
+        height: 100%;
+    }
+
+    #head ul li {
+        opacity: .3;
+        cursor: auto;
     }
 }
 
